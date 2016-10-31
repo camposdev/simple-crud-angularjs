@@ -1,0 +1,247 @@
+/*=================================
+=            Variables            =
+=================================*/
+/*=====  End of Variables  ======*/
+/*==============================
+=            Mixins            =
+==============================*/
+/*=====  End of Mixins  ======*/
+/*====================================
+=            Global style            =
+====================================*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #262626;
+  background: -moz-linear-gradient(-45deg, #262626 1%, #5d347c 100%);
+  background: -webkit-linear-gradient(-45deg, #262626 1%, #5d347c 100%);
+  background: linear-gradient(135deg, #262626 1%, #5d347c 100%);
+}
+.main {
+  padding-bottom: 100px;
+}
+* {
+  outline: none;
+}
+/*=====  End of Global style  ======*/
+/*====================================
+=            Header style            =
+====================================*/
+.header {
+  text-align: center;
+  padding: 30px 0;
+}
+.header .title-page {
+  font-size: 75px;
+}
+.header small {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+/*=====  End of Header style  ======*/
+/*======================================
+=            Elements style            =
+======================================*/
+.btn-action {
+  background-color: #fff;
+  border: 1px solid #fff;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #5c3479;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.btn-action:hover,
+.btn-action:focus {
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+}
+.btn-action .zmdi {
+  margin-left: 10px;
+}
+.title-section {
+  margin: 0 0 30px;
+}
+/*=====  End of Elements style  ======*/
+/*=================================
+=            Box tasks            =
+=================================*/
+.list-tasks {
+  margin: 50px 0 100px;
+}
+.box-task {
+  background-color: #fff;
+  color: #666;
+  margin-bottom: 30px;
+}
+.box-task.open {
+  border-top: 3px solid #34bc6b;
+}
+.box-task.open .status span {
+  color: #34bc6b;
+}
+.box-task.closed {
+  border-top: 3px solid #e05757;
+}
+.box-task.closed .status span {
+  color: #e05757;
+}
+.box-task .wrap {
+  padding: 20px;
+  line-height: 18px;
+  overflow: hidden;
+  overflow: hidden;
+}
+.box-task .wrap .title {
+  font-size: 20px;
+  color: #5c3479;
+  margin: 0 0 15px;
+  height: 40px;
+}
+.box-task .wrap .description p {
+  margin: 0;
+  height: 40px;
+}
+.box-task .actions {
+  display: inline-block;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ececec;
+  padding: 15px 20px;
+}
+.box-task .actions .status {
+  font-size: 12px;
+  line-height: 35px;
+  color: #999;
+}
+.box-task .actions .btn-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #34bc6b;
+  font-size: 20px;
+  line-height: 35px;
+  color: #34bc6b;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.box-task .actions .btn-icon:hover {
+  background-color: #34bc6b;
+  color: #fff;
+}
+.box-task .actions .btn-icon[disabled] {
+  border-color: #999;
+  color: #999;
+}
+.box-task .actions .btn-icon[disabled]:hover {
+  background-color: transparent;
+}
+/*=====  End of Box tasks  ======*/
+/*==================================
+=            Form style            =
+==================================*/
+.add-form {
+  margin-top: 50px;
+}
+.add-form input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.add-form .btn-action {
+  background-color: transparent;
+  color: #fff;
+}
+.add-form .btn-action:hover {
+  background-color: #fff;
+  color: #5c3479;
+}
+/*=====  End of Form style  ======*/
+/*===================================
+=            Alert style            =
+===================================*/
+.alert-msg {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  visibility: visible;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.alert-msg .wrap {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  background-color: #fff;
+  padding: 30px;
+  top: 10%;
+  left: 50%;
+  margin-left: -200px;
+  color: #666;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+@media (max-width: 400px) {
+  .alert-msg .wrap {
+    width: 90%;
+    margin-left: 5%;
+    left: 0;
+  }
+}
+.alert-msg .wrap h3 {
+  margin-bottom: 30px;
+}
+.alert-msg .wrap .confirm {
+  display: block;
+  width: 100%;
+  background-color: #34bc6b;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.alert-msg .wrap .cancel {
+  display: block;
+  width: 100%;
+  background-color: #e05757;
+  color: #fff;
+}
+.alert-msg.ng-hide {
+  display: block;
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  visibility: hidden;
+  z-index: -1;
+}
+.alert-msg.ng-hide .wrap {
+  top: 0;
+}
+/*=====  End of Alert style  ======*/

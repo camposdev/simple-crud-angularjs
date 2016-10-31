@@ -1,0 +1,252 @@
+/*=================================
+=            Variables            =
+=================================*/
+
+$dark = #666
+$green = #34BC6B
+$red = #E05757
+$purple = #5C3479
+$light = #f5f5f5
+
+/*=====  End of Variables  ======*/
+
+
+/*==============================
+=            Mixins            =
+==============================*/
+
+vendor(prop, args)
+	-webkit-{prop} args
+	   -moz-{prop} args
+	    -ms-{prop} args
+	     -o-{prop} args
+	        {prop} args
+
+transition()
+	vendor('transition', all arguments ease-out)
+
+rounded()
+	vendor('border-radius', arguments)
+
+support-for-ie ?= true
+opacity()
+	opacity arguments
+	if support-for-ie
+		filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(arguments * 100) + ')')
+
+/*=====  End of Mixins  ======*/
+
+
+
+/*====================================
+=            Global style            =
+====================================*/
+
+body
+	font-family 'Montserrat', sans-serif
+	font-size 14px
+	color white
+	background rgb(38,38,38)
+	background -moz-linear-gradient(-45deg,  rgba(38,38,38,1) 1%, rgba(93,52,124,1) 100%)
+	background -webkit-linear-gradient(-45deg,  rgba(38,38,38,1) 1%,rgba(93,52,124,1) 100%)
+	background linear-gradient(135deg,  rgba(38,38,38,1) 1%,rgba(93,52,124,1) 100%)
+
+.main
+	padding-bottom 100px
+
+* 
+	outline none
+
+/*=====  End of Global style  ======*/
+
+
+/*====================================
+=            Header style            =
+====================================*/
+
+.header
+	text-align center
+	padding 30px 0
+	.title-page
+		font-size 75px
+	small 
+		text-transform uppercase
+		font-size 10px
+		letter-spacing 5px
+
+/*=====  End of Header style  ======*/
+
+
+/*======================================
+=            Elements style            =
+======================================*/
+
+.btn-action
+	background-color white
+	border 1px solid white
+	padding 15px 30px
+	text-transform uppercase
+	font-size 12px
+	letter-spacing 3px
+	color $purple
+	transition .3s
+	&:hover, 
+	&:focus
+		background-color transparent
+		color white
+		outline none
+	.zmdi
+		margin-left 10px
+
+.title-section
+	margin 0 0 30px
+
+/*=====  End of Elements style  ======*/
+
+
+/*=================================
+=            Box tasks            =
+=================================*/
+
+.list-tasks
+	margin 50px 0 100px
+
+.box-task
+	background-color white
+	color $dark
+	margin-bottom 30px
+	&.open
+		border-top 3px solid $green
+		.status
+			span
+				color $green
+	&.closed
+		border-top 3px solid $red
+		.status
+			span
+				color $red
+	.wrap
+		padding 20px
+		.title
+			font-size 20px
+			color $purple
+			margin 0 0 15px
+			height 40px
+		    line-height 18px
+		    overflow hidden
+		.description p
+			margin 0
+			height 40px
+		    overflow hidden
+	.actions
+		display inline-block
+		width 100%
+		background-color $light
+		border-top 1px solid #ececec
+		padding 15px 20px
+		.status
+			font-size 12px
+			line-height 35px
+			color #999
+		.btn-icon
+			width 35px
+			height 35px
+			border-radius 50%
+			background-color transparent
+			border 1px solid $green
+			font-size 20px
+			line-height 35px
+			color $green
+			transition .3s
+			&:hover 
+				background-color $green
+				color white
+			&[disabled]
+				border-color #999
+				color #999
+				&:hover
+					background-color transparent
+		
+
+/*=====  End of Box tasks  ======*/
+
+
+/*==================================
+=            Form style            =
+==================================*/
+
+.add-form
+	margin-top 50px
+	input
+		display block
+		width 100%
+		padding 15px
+		margin-bottom 20px
+		font-size 18px
+		text-align center
+		background-color transparent
+		border 1px solid white
+		border-radius 5px
+	.btn-action
+		background-color transparent
+		color white
+		&:hover
+			background-color white
+			color $purple
+		
+
+/*=====  End of Form style  ======*/
+
+
+/*===================================
+=            Alert style            =
+===================================*/
+
+.alert-msg
+	position fixed
+	z-index 5
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background-color rgba(0, 0, 0, .8)
+	opacity 1
+	visibility visible
+	transition .3s
+	.wrap
+		position absolute
+		width 400px
+		height auto
+		background-color white
+		padding 30px
+		top 10%
+		left 50%
+		margin-left -200px
+		color $dark
+		transition .3s
+		@media (max-width 400px)
+			width 90%
+			margin-left 5%
+			left 0
+		h3 
+			margin-bottom 30px
+		.confirm
+			display block
+			width 100%
+			background-color $green
+			color white
+			margin-bottom 20px
+		.cancel
+			display block
+			width 100%
+			background-color $red
+			color white
+	&.ng-hide
+		display block
+		opacity 0
+		visibility hidden
+		z-index: -1
+		.wrap
+			top 0
+
+/*=====  End of Alert style  ======*/

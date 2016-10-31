@@ -1,0 +1,47 @@
+<div data-ng-controller="tasksListCtrl as ctrl">
+	<div class="row text-center">
+		<a href="./#/add" class="btn btn-action">Add new task <i class="zmdi zmdi-edit"></i></a>
+	</div>
+	<div class="row list-tasks">
+		<div class="text-center">
+			<h3 class="title-section">Open tasks</h3>
+		</div>
+		<article class="col-md-3" data-ng-repeat="task in ctrl.tasks" data-ng-show="task.status == 'Open'">
+			<div class="box-task open">
+				<div class="wrap">
+					<h2 class="title">{{ task.name }}</h2>
+					<div class="description">
+						<p>{{ task.description }}</p>
+					</div>
+				</div>
+				<div class="actions">
+					<div class="status pull-left">
+						Status: <span>{{ task.status }}</span>
+					</div>
+					<button class="btn-icon pull-right" data-ng-click="ctrl.closeTask(task)"><i class="zmdi zmdi-check-all"></i></button>
+				</div>
+			</div>
+		</article>
+	</div>
+	<div class="row">
+		<div class="text-center">
+			<h3 class="title-section">Closed tasks</h3>
+		</div>
+		<article class="col-md-3" data-ng-repeat="task in ctrl.tasks" data-ng-show="task.status == 'Closed'">
+			<div class="box-task closed">
+				<div class="wrap">
+					<h2 class="title">{{ task.name }}</h2>
+					<div class="description">
+						<p>{{ task.description }}</p>
+					</div>
+				</div>
+				<div class="actions">
+					<div class="status pull-left">
+						Status: <span>{{ task.status }}</span>
+					</div>
+					<button class="btn-icon pull-right" disabled><i class="zmdi zmdi-check-all"></i></button>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

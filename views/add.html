@@ -1,0 +1,16 @@
+<div data-ng-controller="addTaskCtrl as ctrl">
+	<div class="row text-center">
+		<a href="./#/" class="btn btn-action">Cancel <i class="zmdi zmdi-close"></i></a>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<form data-ng-submit="ctrl.addTask(task)" name="form" class="add-form">
+				<input type="text" name="name" data-ng-model="task.name" class="input" placeholder="Task name" required>
+				<input type="text" name="description" data-ng-model="task.description" class="input" placeholder="Task description" required>
+				<div class="text-center">
+					<button class="btn btn-action" data-ng-disabled="form.name.$invalid || form.description.$invalid">Add <i class="zmdi zmdi-plus"></i></button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
