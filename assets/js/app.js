@@ -49,9 +49,12 @@ function taskService($location, $rootScope){
 	];
 
 	function addTask(form){
-		var arr = { name: form.name, description: form.description, status: 'Open' }
+		
+        var newId = tasks.slice(-1)[0].id + 1;
+		var arr = { id: newId, name: form.name, description: form.description, status: 'Open' }
 		tasks.push(arr);
 		$location.path('/');
+		console.log(tasks)
 	}
 
 	function deleteTask() {
